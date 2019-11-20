@@ -38,7 +38,7 @@ def ensure_rows(products, rows, min_count):
 def main():
   rows = []
   for transaction_id in range(1, 101):
-    trx_products = [random.choice(products) for i in range(3)]
+    trx_products = random.sample(products, 3)
     rows.append(str(transaction_id) + ', ' + ' '.join(trx_products))
 
   ensure_rows(products, rows, 10)
